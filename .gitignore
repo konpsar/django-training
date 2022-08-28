@@ -1,2 +1,5 @@
 
 venv/
+notes/__pychache__/
+home/__pychache__/
+*.pyc
