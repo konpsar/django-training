@@ -21,5 +21,6 @@ from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 #    path('home', views.home) (moved it into ./home/urls.py and included it in the line below)
-    path('', include('home.urls'))
+    path('', include('home.urls')),
+    path('smart/', include('notes.urls')),    
 ]
