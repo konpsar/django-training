@@ -2,18 +2,22 @@ from calendar import c
 from typing import List
 from django.shortcuts import render
 from django.http import Http404
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 from .models import Notes
 from .forms import NotesForm
 # Create your views here.
 
+class NotesUpdateView(UpdateView):
+    model = Notes
+    success_url = '/smart/notes'
+    form_class = NotesForm
+    
 class NotesCreateView(CreateView):
     model = Notes
     # fields = ['title', 'text']
-    form_class = NotesForm
     success_url = '/smart/notes'
-    # Weird notice: if form_class = NotesForm is below success_url, Title box goes below Text box 
+    form_class = NotesForm
     
 class NotesListView(ListView):
     model = Notes
