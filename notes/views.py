@@ -38,7 +38,7 @@ class NotesListView(LoginRequiredMixin, ListView):
     model = Notes
     context_object_name = "notes"
     template_name = "notes/notes_list.html"
-    login_url = "/admin"
+    login_url = "/login"
     
     #Search on ccbv.co.uk/projects/Django/3.1/ to get help on class views and find what 
     #we should alter in order to get only specific user's notes
